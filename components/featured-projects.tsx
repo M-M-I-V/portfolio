@@ -15,7 +15,7 @@ export default function FeaturedProjects() {
         { label: "Frontend", href: "https://github.com/M-M-I-V/clinic-frontend" },
         { label: "Backend", href: "https://github.com/M-M-I-V/clinic-backend" },
       ],
-      image: "/healthcare-clinic-dashboard-interface.jpg",
+      image: "/dashboard.png",
     },
     {
       id: 2,
@@ -25,7 +25,7 @@ export default function FeaturedProjects() {
         "Consolidated disparate hospital systems into a unified Star Schema warehouse, optimizing query performance for patient outcome analysis.",
       tags: ["Python", "Pandas", "Numpy", "SQLAlchemy", "ETL", "MySQL", "Data Modeling"],
       links: [{ label: "GitHub", href: "https://github.com/M-M-I-V/data-warehousing" }],
-      image: "/data-warehouse-etl-pipeline-diagram.jpg",
+      image: "/erd.png",
     },
     {
       id: 3,
@@ -35,7 +35,7 @@ export default function FeaturedProjects() {
         "Lead Implementer for the college's official digital presence. Focused on accessibility, SEO, and maintainable architecture.",
       tags: ["Next.js", "React", "Tailwind CSS", "SEO", "Accessibility"],
       links: [{ label: "Visit Site", href: "https://mcst.edu.ph" }],
-      image: "/modern-college-website-landing-page.jpg",
+      image: "/mcst-website.png",
     },
   ]
 
@@ -56,7 +56,7 @@ export default function FeaturedProjects() {
               }`}
             >
               {/* Image */}
-              <div className={`rounded-xl overflow-hidden bg-muted h-96 ${index % 2 === 1 ? "lg:order-2" : ""}`}>
+              <div className={`rounded-xl overflow-hidden bg-muted h-full ${index % 2 === 1 ? "lg:order-2" : ""}`}>
                 <img
                   src={project.image || "/placeholder.svg"}
                   alt={project.title}

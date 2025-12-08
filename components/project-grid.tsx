@@ -1,90 +1,63 @@
 import { Badge } from "@/components/ui/badge"
 import Link from "next/link"
 import { ExternalLink, Github } from "lucide-react"
+import { FolderIcon } from "./folder-icon"
 
 export default function ProjectGrid() {
-  const projects = [
+  const secondaryProjects = [
     {
-      id: 1,
-      title: "Breast Cancer ML",
-      description: "Classification model achieving 98.25% accuracy using Logistic Regression.",
-      tags: ["Python", "Scikit-Learn", "Machine Learning"],
-      highlights: "98.25% Accuracy",
-      links: [{ label: "GitHub", href: "#" }],
+      title: "Breast Cancer Classification",
+      role: "Team Lead & ML Engineer",
+      desc: "Logistic Regression model achieving 98.25% accuracy in classifying benign vs malignant tumors.",
+      tags: ["Machine Learning", "Scikit-Learn"],
     },
     {
-      id: 2,
       title: "SafeZone AI",
-      description: "Hackathon project leveraging Computer Vision for safety monitoring.",
-      tags: ["Python", "Computer Vision", "OpenCV"],
-      highlights: "3rd Place Winner",
-      links: [{ label: "GitHub", href: "#" }],
+      role: "Project Manager & ML Engineer",
+      desc: "3rd Place Hackathon Winner. Computer vision system for real-time PPE detection.",
+      tags: ["Computer Vision", "Hackathon"],
     },
     {
-      id: 3,
       title: "Koha ILS Implementation",
-      description: "Library management system with Linux System Administration.",
-      tags: ["Linux", "Open Source", "System Admin"],
-      highlights: "Open Source",
-      links: [{ label: "GitHub", href: "#" }],
+      role: "SysAdmin",
+      desc: "Deployed open-source library system on Linux Ubuntu. Managed network config and backups.",
+      tags: ["Linux", "Open Source"],
     },
     {
-      id: 4,
-      title: "IT Olympics Java",
-      description: "Algorithm competition project showcasing competitive programming skills.",
-      tags: ["Java", "Algorithms", "Competitive Programming"],
-      highlights: "Runner-Up",
-      links: [{ label: "GitHub", href: "#" }],
+      title: "IT Olympics - Java",
+      role: "Participant",
+      desc: "Competitive programming award demonstrating strong algorithmic problem solving.",
+      tags: ["Java", "Algorithms"],
     },
   ]
 
   return (
-    <section className="py-12 px-4 sm:px-6 lg:px-8 bg-muted/30">
-      <div className="max-w-7xl mx-auto">
-        <div className="mb-12">
-          <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">Engineering & Research</h2>
-          <p className="text-foreground/70 text-lg">Showcasing breadth and academic excellence</p>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {projects.map((project) => (
+    <section className="py-12 bg-gray-50 dark:bg-zinc-900 border-t border-gray-200 dark:border-zinc-800">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 className="text-3xl font-extrabold text-gray-900 dark:text-slate-200 mb-12">Engineering & Research</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {secondaryProjects.map((project) => (
             <div
-              key={project.id}
-              className="group rounded-xl border border-border bg-card hover:border-accent/50 hover:shadow-lg transition-all duration-300 p-6"
+              key={project.title}
+              className="bg-white dark:bg-zinc-800 rounded-lg shadow-md p-6 border border-gray-100 dark:border-zinc-700 hover:shadow-lg transition-shadow"
             >
-              <div className="space-y-4">
-                <div>
-                  <h3 className="text-xl font-bold text-foreground group-hover:text-accent transition-colors">
-                    {project.title}
-                  </h3>
-                  <p className="text-primary font-semibold text-xs uppercase tracking-wider mt-2">
-                    {project.highlights}
-                  </p>
-                </div>
-
-                <p className="text-foreground/70 text-sm leading-relaxed">{project.description}</p>
-
-                <div className="flex flex-wrap gap-2">
-                  {project.tags.map((tag) => (
-                    <Badge key={tag} variant="outline" className="text-xs">
-                      {tag}
-                    </Badge>
-                  ))}
-                </div>
-
-                <div className="flex gap-2 pt-4">
-                  {project.links.map((link) => (
-                    <Link
-                      key={link.label}
-                      href={link.href}
-                      className="inline-flex items-center gap-1 text-xs font-semibold text-accent hover:text-accent/80 transition-colors"
-                    >
-                      <Github size={14} />
-                      {link.label}
-                      <ExternalLink size={12} />
-                    </Link>
-                  ))}
-                </div>
+              <div className="flex justify-between items-start mb-4">
+                <span className="text-xs font-bold text-blue-600 dark:text-blue-400 uppercase tracking-wide">
+                  {project.role}
+                </span>
+                <FolderIcon type={project.tags[0]} />
+              </div>
+              <h3 className="text-lg font-bold text-gray-900 dark:text-slate-200 mb-2">{project.title}</h3>
+              <p className="text-sm text-gray-600 dark:text-slate-400 mb-4">{project.desc}</p>
+              <div className="flex flex-wrap gap-2 mt-auto">
+                {project.tags.map((tag) => (
+                  <span
+                    key={tag}
+                    className="text-xs px-2 py-1 bg-gray-100 dark:bg-zinc-700 text-gray-600 dark:text-slate-300 rounded"
+                  >
+                    {tag}
+                  </span>
+                ))}
               </div>
             </div>
           ))}

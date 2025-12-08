@@ -1,6 +1,7 @@
 "use client"
 
 import Link from "next/link"
+import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { ArrowRight, Github } from "lucide-react"
 
@@ -48,17 +49,15 @@ export default function HeroSection() {
           </div>
 
           {/* Right Visual */}
-          <div className="relative hidden lg:block">
-            <div className="relative w-full aspect-square rounded-2xl bg-linear-to-br from-primary/20 via-accent/20 to-transparent border border-border overflow-hidden">
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="text-center space-y-4">
-                  <div className="w-24 h-24 bg-primary/40 rounded-full mx-auto"></div>
-                  <p className="text-foreground/60 text-sm">T-Shaped Developer</p>
-                </div>
-              </div>
-              {/* Floating elements */}
-              <div className="absolute top-10 right-10 w-16 h-16 bg-accent/20 rounded-lg blur-xl"></div>
-              <div className="absolute bottom-10 left-10 w-20 h-20 bg-primary/20 rounded-full blur-xl"></div>
+          <div className="relative hidden lg:flex justify-center items-center">
+            <div className="relative w-lg h-128 rounded-full overflow-hidden border-4 border-primary/20 shadow-lg">
+              <Image
+                src="/profile.jpg"
+                alt="Neil Jay Lacandazo - Full-Stack Developer"
+                fill
+                className="object-cover"
+                priority
+              />
             </div>
           </div>
         </div>

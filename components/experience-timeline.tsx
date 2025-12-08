@@ -7,6 +7,7 @@ export default function ExperienceTimeline() {
         "Second Runner-Up (Project Manager & ML Engineer) @ PMAX-EMAX Hackathon",
         "Team Lead & ML Engineer @ Classifying Malignant and Benign Breast Tumors",
         "Project Manager & ETL Engineer @ Healthcare Patient Outcome Data Warehouse",
+        "Team Lead & Full-Stack Developer @ Patient Record Management System",
       ],
     },
     {

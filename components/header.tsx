@@ -67,7 +67,7 @@ export default function Header() {
                 {theme === "light" ? <Moon size={16} /> : <Sun size={16} />}
               </Button>
             )}
-            <a href="/resume.pdf" download>
+            <a href="/NeilJayLacandazoResume.pdf" download>
               <Button variant="default" size="sm" className="gap-2">
                 <Download size={16} />
                 <span className="hidden sm:inline">Resume</span>
